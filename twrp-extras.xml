@@ -4,6 +4,8 @@
           fetch="https://github.com/DarkRecovery/" />
   <remove-project name="platform/bootable/recovery"/>
 
+  <project path="build/make" name="dr_build" remote="dr" revision="dr" >
+
   <project name="dr_manifest" path="manifest" remote="dr" revision="dr" />
 
   <project name="dr_recovery" path="bootable/recovery" remote="dr" revision="dr" />
