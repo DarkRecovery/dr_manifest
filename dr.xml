@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="dr"
+          fetch="https://github.com/DarkRecovery/" />  
+
+  <remove-project name="android_build"/>
+  <remove-project name="android_frameworks_base" />
+  <remove-project name="platform/bootable/recovery"/>
+
+  <project path="build/make" name="dr_build" remote="dr" revision="dr" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <project name="dr_manifest" path="manifest" remote="dr" revision="dr" />
+
+  <project name="dr_recovery" path="bootable/recovery" remote="dr" revision="dr" />
+  
+  <project name="dr_vendor" path="vendor/dark" remote="dr" revision="dr" />
+
+  <project name="device_xiaomi_land" path="device/xiaomi/land" remote="dr" revision="dr" />
+
+  <project name="device_xiaomi_whyred" path="device/xiaomi/whyred" remote="dr" revision="dr" />
+
+  <project path="device/qcom/common" name="TeamWin/android_device_qcom_common" remote="github" revision="android-8.0" />
+
+  <project path="external/busybox" name="omnirom/android_external_busybox" remote="github" revision="android-8.1" />
+
+  <project path="TeamWin/.repo/frameworks/base" name="android_frameworks_base" remote="omnirom" revision="android-8.1" clone-depth="1" >
+    <linkfile src="core/java/android/content" dest="frameworks/base/core/java/android/content" />
+    <linkfile src="core/java/android/security" dest="frameworks/base/core/java/android/security" />
+  </project> />
+
+</manifest>
