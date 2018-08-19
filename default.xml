@@ -623,8 +623,4 @@
   <!-- OmniROM -->
   <include name="omni-default.xml" />
 
-  <!-- Dark Recovery -->
-  <include name="dr.xml" />
-  <include name="dr-remove.xml" />
-
 </manifest>
